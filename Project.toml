@@ -1,0 +1,24 @@
+name = "ONNXLowLevel"
+uuid = "26bbae53-793e-4dc4-8f6d-18bb7d98adf6"
+version = "0.1.0"
+
+[deps]
+ProtoBuf = "3349acd9-ac6a-5e09-bcdb-63829b23a429"
+
+[weakdeps]
+REPL = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
+
+[extensions]
+REPLExt = ["REPL"]
+
+[compat]
+ProtoBuf = "1"
+julia = "1.9"
+protoc_jll = "26.1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+protoc_jll = "c7845625-083e-5bbe-8504-b32d602b7110"
+
+[targets]
+test = ["Test", "protoc_jll"]

@@ -1,0 +1,10 @@
+[deps]
+Bob = "67b96fbe-20e8-4b38-9d82-3e9a5eae7872"
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
+ONNXLowLevel = "26bbae53-793e-4dc4-8f6d-18bb7d98adf6"
+ONNXRunTime = "e034b28e-924e-41b2-b98f-d2bbeb830c6a"
+ProtoBuf = "3349acd9-ac6a-5e09-bcdb-63829b23a429"
+cuDNN = "02a925ec-e4fe-4b08-9a7e-0d78e3d38ccd"
+
+[extras]
+CUDA_Runtime_jll = "76a88914-d11a-5bdc-97e0-2f5a05c973a2"
