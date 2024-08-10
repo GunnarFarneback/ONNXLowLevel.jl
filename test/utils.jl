@@ -15,13 +15,14 @@ function protoc_decode(proto)
 end
 
 function proto_is_equal(x, y)
-    typeof(x) == typeof(y) || return false
-    if isstructtype(typeof(x))
-        return all(proto_is_equal(getfield(x, field), getfield(y, field))
-                   for field in fieldnames(typeof(x)))
-    elseif x isa Vector
+    if x isa Vector
         size(x) == size(y) || return false
         return all(proto_is_equal.(x, y))
+    elseif typeof(x) != typeof(y)
+        return false
+    elseif isstructtype(typeof(x))
+        return all(proto_is_equal(getfield(x, field), getfield(y, field))
+                   for field in fieldnames(typeof(x)))
     end
     return x == y
 end
