@@ -46,7 +46,7 @@ testcases =
       """),
 
      
-     (TensorProto("foo", [1]),
+     (TensorProto("foo", Int64[1]),
       raw"""
       t {
         dims: 1
@@ -129,7 +129,7 @@ testcases =
       type: STRINGS
       """),
 
-     ([TensorProto("foo", [1]), TensorProto("bar", [-0.0f0])],
+     ([TensorProto("foo", Int64[1]), TensorProto("bar", [-0.0f0])],
       raw"""
       tensors {
         dims: 1
@@ -146,7 +146,7 @@ testcases =
       type: TENSORS
       """),
 
-     ((@view [TensorProto("foo", [1])][1:1]),
+     ((@view [TensorProto("foo", Int64[1])][1:1]),
       raw"""
       tensors {
         dims: 1

@@ -16,7 +16,7 @@ node = [NodeProto(input = ["input", "kernel", "bias"],
                   name = "relu",
                   op_type = "Relu")]
 graph = GraphProto(; name = "graph", node, initializer, input, output)
-model = ModelProto(; ir_version = 7,
+model = ModelProto(; ir_version = Int64(7),
                    opset_import = [ONNX.OperatorSetIdProto(version = 12)],
                    producer_name = "Test",
                    producer_version = "0.0.1",

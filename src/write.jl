@@ -13,7 +13,7 @@ for (field, enum, type, convert_func) in
     [(:f, :FLOAT, Float32, nothing),
      (:f, :FLOAT, AbstractFloat, Float32),
      (:i, :INT, Int64, nothing),
-     (:i, :INT, Integer, Int),
+     (:i, :INT, Integer, Int64),
      (:s, :STRING, AbstractString, Vector{UInt8}),
      (:t, :TENSOR, TensorProto, nothing),
      (:g, :GRAPH, GraphProto, nothing),
@@ -101,7 +101,7 @@ function ValueInfoProto(name::AbstractString, type::DataType,
 end
 
 var"TensorShapeProto.Dimension"(x::Integer) =
-    var"TensorShapeProto.Dimension"(value = OneOf(:dim_value, Int(x)))
+    var"TensorShapeProto.Dimension"(value = OneOf(:dim_value, Int64(x)))
 
 var"TensorShapeProto.Dimension"(x::AbstractString) =
     var"TensorShapeProto.Dimension"(value = OneOf(:dim_param, string(x)))

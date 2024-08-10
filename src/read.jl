@@ -49,9 +49,9 @@ function get_value_info(value_info::ValueInfoProto; params_as_zero = false)
     end
     type = tensorproto_julia_type(t.value.elem_type)
     s = t.value.shape
-    dims = Union{String, Int}[d.value.value for d in s.dim]
+    dims = Union{String, Int64}[d.value.value for d in s.dim]
     if params_as_zero
-        dims = Int[(d isa String) ? 0 : d for d in dims]
+        dims = Int64[(d isa String) ? 0 : d for d in dims]
     end
     return value_info.name, type, dims
 end
@@ -121,5 +121,5 @@ function get_tensor(tensor::TensorProto)
     else
         data = reinterpret(T, tensor.raw_data)
     end
-    return reshape(data, reverse(tensor.dims)...)
+    return reshape(data, reverse(Int.(tensor.dims))...)
 end
