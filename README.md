@@ -21,10 +21,9 @@ slightly in their additional convenience constructors and functions.
 
 ## Installation
 
-ONNXLowLevel is not yet registered. For now, install it with
 ```
 using Pkg
-Pkg.add("https://github.com/GunnarFarneback/ONNXLowLevel.jl.git")
+Pkg.add("ONNXLowLevel")
 ```
 
 ## Usage
